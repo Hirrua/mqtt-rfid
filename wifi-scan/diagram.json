@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Hirrua",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -67.2, "left": -100.76, "attrs": {} },
+    { "type": "board-mfrc522", "id": "rfid1", "top": -69.85, "left": 128.24, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 121.2, "left": 51.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 230,
+      "left": 60,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:5", "rfid1:SDA", "gray", [ "v-105.6", "h134.4" ] ],
+    [ "esp:18", "rfid1:SCK", "green", [ "h105.6", "v-57.6" ] ],
+    [ "esp:23", "rfid1:MOSI", "violet", [ "h115.2", "v19.2" ] ],
+    [ "esp:19", "rfid1:MISO", "white", [ "v-28.8", "h134.4" ] ],
+    [ "esp:22", "rfid1:RST", "orange", [ "h96", "v48" ] ],
+    [ "esp:3V3", "rfid1:3.3V", "red", [ "h172.95", "v105.6", "h57.6" ] ],
+    [ "esp:GND.2", "rfid1:GND", "black", [ "v-38.4", "h57.6", "v96" ] ],
+    [ "esp:2", "led1:A", "blue", [ "h115.2", "v67.2" ] ],
+    [ "led1:C", "r1:1", "black", [ "h0.4", "v42.8" ] ],
+    [ "r1:2", "esp:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}
