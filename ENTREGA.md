@@ -1,6 +1,6 @@
 ## Trabalho IOT (29/09/2026)
 
-Link do Wokwi: https://wokwi.com/projects/305569599398609473
+Link do Wokwi: https://wokwi.com/projects/476542478171839489
 
 1. Acesso negado
 ![Serial Negado](prints/negado.png)
